@@ -1,0 +1,46 @@
+# SIIS Configuration File
+# Configuration for Scenario-Inspired Instruction Synthesizer
+
+# ============================================================================
+# LLM Settings
+# ============================================================================
+llm:
+  provider: gemini  # Options: anthropic, openai, gemini
+  model: gemini-2.5-pro  # Anthropic: claude-3-5-sonnet-20241022, claude-3-opus-20240229
+                                      # OpenAI: gpt-4, gpt-4-turbo, gpt-3.5-turbo
+                                      # Gemini: gemini-1.5-pro, gemini-1.5-flash, gemini-pro
+  temperature: 0.8  # High temperature for diverse scenario generation
+  concurrent_requests: 10  # Number of concurrent API calls (watch rate limits!)
+  wait_times: [5, 10, 30, 60, 120]  # Retry backoff times in seconds
+
+# ============================================================================
+# Scenario Generation Settings
+# ============================================================================
+scenarios:
+  threshold: 500  # N_CWE threshold for determining scenario count
+  count_above_threshold: 3  # Generate 3 scenarios when N_CWE >= threshold
+  count_below_threshold: 5  # Generate 5 scenarios when N_CWE < threshold
+  disable_threshold: false  # If true, always generate count_below_threshold scenarios
+
+# ============================================================================
+# Clustering Settings
+# ============================================================================
+clustering:
+  method: kmeans  # Options: kmeans, hdbscan
+  embedding_model: sentence-transformers/all-mpnet-base-v2  # Sentence-BERT model
+  clusters_per_cwe: 50  # Number of clusters per CWE (for K-Means)
+  min_cluster_size: 5  # Minimum cluster size (for HDBSCAN)
+
+# ============================================================================
+# Paths
+# ============================================================================
+paths:
+  cache_dir: .cache  # Directory for LLM response cache
+  output_dir: data/output  # Directory for generated files
+  log_dir: logs  # Directory for log files
+
+# ============================================================================
+# Logging
+# ============================================================================
+logging:
+  level: INFO  # Options: DEBUG, INFO, WARNING, ERROR, CRITICAL

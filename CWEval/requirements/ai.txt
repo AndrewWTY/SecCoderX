@@ -1,0 +1,9 @@
+litellm
+openai
+# google
+google-auth
+google-generativeai
+# anthropic
+anthropic[vertex]
+# bedrock
+boto3

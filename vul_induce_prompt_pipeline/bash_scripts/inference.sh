@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=1,6 python inference_instructions_with_vllm.py  --input  /path/to/project/vul_induce_prompt_pipeline/data/output/pl_target_data.jsonl --model-name Qwen/Qwen2.5-Coder-32B-Instruct --output-jsonl qwen2_5_32b_pl_target_with_generation_additional_temp0.jsonl --temperature 0
