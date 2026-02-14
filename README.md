@@ -1,6 +1,5 @@
 # Secure Code Generation via Online Reinforcement Learning with Vulnerability Reward Model (SecCoderX)
 
----
 
 SecCoderX is an **online reinforcement learning framework** that aligns code-generation models to produce **secure, functionality-preserving code**. Datasets and model checkpoints are in [Section 8 (Artifacts)](#8-artifacts). This is the official repository for our paper [*"Secure Code Generation via Online Reinforcement Learning with Vulnerability Reward Model"*](https://arxiv.org/abs/2602.07422).
 
